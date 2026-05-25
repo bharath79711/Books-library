@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Book</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #74ebd5, #ACB6E5);
+            margin: 0;
+            padding: 60px;
+            text-align: center;
+        }
+        h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+        form {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            display: inline-block;
+            padding: 30px;
+            text-align: left;
+            max-width: 400px;
+            width: 100%;
+        }
+        form input[type="submit"] {
+            background: #16a085;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+        form input[type="submit"]:hover {
+            background: #1abc9c;
+            transform: translateY(-3px);
+        }
+        .actions {
+            margin-top: 30px;
+        }
+        .actions a {
+            text-decoration: none;
+            background: #2980b9;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            margin: 0 10px;
+            font-size: 1em;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+        .actions a:hover {
+            background: #3498db;
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+    <h1>✏️ Update Book</h1>
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Update">
+    </form>
+
+    <div class="actions">
+        <a href="{% url 'book_list' %}">⬅ Back to Book List</a>
+        <a href="{% url 'home' %}">🏠 Home</a>
+    </div>
+</body>
+</html>
+

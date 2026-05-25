@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book List</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #74ebd5, #ACB6E5);
+            margin: 0;
+            padding: 60px;
+            text-align: center;
+        }
+        h1 {
+            color: #2c3e50;
+            font-size: 3em;
+            margin-bottom: 40px;
+        }
+        .book-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .book-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            padding: 20px;
+            width: 220px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .book-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+        }
+        .book-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #16a085;
+            text-decoration: none;
+        }
+        .actions {
+            margin-top: 40px;
+        }
+        .actions a {
+            text-decoration: none;
+            background: #16a085;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 1.1em;
+            margin: 0 10px;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+        .actions a:hover {
+            background: #1abc9c;
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+    <h1>📚 Book List</h1>
+
+    <div class="book-container">
+        {% for book in books %}
+        <div class="book-card">
+            <a class="book-title" href="{% url 'book_detail' book.id %}">{{ book.title }}</a>
+        </div>
+        {% empty %}
+        <p>No books available.</p>
+        {% endfor %}
+    </div>
+
+    <div class="actions">
+        <a href="{% url 'book_create' %}">➕ Create a Book</a>
+        <a href="{% url 'home' %}">🏠 Back to Home</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Library Home</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #74ebd5, #ACB6E5);
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #2c3e50;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            font-size: 1.5em;
+            letter-spacing: 1px;
+        }
+        h1 {
+            color: #2c3e50;
+            font-size: 3em;
+            margin: 40px 0 20px;
+            text-align: center;
+        }
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            background: #16a085;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 1.2em;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+        .nav-links a:hover {
+            background: #1abc9c;
+            transform: translateY(-3px);
+        }
+        .welcome {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.2em;
+            color: #34495e;
+            line-height: 1.6;
+        }
+        .footer {
+            margin-top: 60px;
+            text-align: center;
+            font-size: 0.9em;
+            color: #2c3e50;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>📖 Library Management System</header>
+
+    <h1>📚 Welcome to the Library</h1>
+
+    <div class="nav-links">
+        <a href="{% url 'book_list' %}">View Book List</a>
+        <a href="{% url 'book_create' %}">➕ Create a Book</a>
+    </div>
+
+    <div class="welcome">
+        <p>
+            Manage your collection with ease. Browse through the book list,
+            add new titles, and keep your library organized in a simple,
+            user‑friendly way.
+        </p>
+    </div>
+
+    <div class="footer">
+        <p>✨ Designed for a smooth and enjoyable experience ✨</p>
+    </div>
+</body>
+</html>
+
+
